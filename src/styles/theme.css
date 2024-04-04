@@ -1,0 +1,55 @@
+/* Dark mode colors. */
+:root {
+	--sl-color-accent-low: #06214e;
+	--sl-color-accent: #005ee1;
+	--sl-color-accent-high: #a9caff;
+	--sl-color-white: #ffffff;
+	--sl-color-gray-1: #eeeeee;
+	--sl-color-gray-2: #c2c2c2;
+	--sl-color-gray-3: #8b8b8b;
+	--sl-color-gray-4: #585858;
+	--sl-color-gray-5: #383838;
+	--sl-color-gray-6: #272727;
+	--sl-color-black: #181818;
+}
+/* Light mode colors. */
+:root[data-theme='light'] {
+	--sl-color-accent-low: #c0d8ff;
+	--sl-color-accent: #0060e5;
+	--sl-color-accent-high: #002c72;
+	--sl-color-white: #181818;
+	--sl-color-gray-1: #272727;
+	--sl-color-gray-2: #383838;
+	--sl-color-gray-3: #585858;
+	--sl-color-gray-4: #8b8b8b;
+	--sl-color-gray-5: #c2c2c2;
+	--sl-color-gray-6: #eeeeee;
+	--sl-color-gray-7: #f6f6f6;
+	--sl-color-black: #ffffff;
+}
+
+.big-icon {
+    height: 8rem !important;
+    padding: 1rem;
+    margin: -4rem auto -3rem !important;
+    background-color: var(--sl-color-black);
+}
+
+hr {
+    background: linear-gradient(90deg, transparent, #6dc9f7, #fa759e, transparent);
+    height: 5px;
+    margin: 10rem 0 0 !important;
+    border: 0 !important;
+}
+
+h1, h2 {
+    text-align: center;
+}
+/*
+h1, h2 {
+    display: inline-block;
+    color: transparent !important;
+    background: linear-gradient(45deg, #0089ef 20%,#fa759e 80%);
+    background-clip: text;
+}
+*/
