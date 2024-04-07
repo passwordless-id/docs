@@ -1,0 +1,45 @@
+---
+title: Introduction
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+As an authentication provider, this service implements the OpenID Connect (OIDC) and OAuth 2.0 protocols, which are widely used for authentication and authorization on the web. 
+Thanks to that, a wide range of client libraries and frameworks can be used to seamlessly integrate with it.
+
+OpenID Parameters
+-----------------
+
+Unlike almost every other provider, no prior registration of your website or app is necessary. You can start using it directly as a free public service.
+
+- Discovery URL: `https://api.passwordless.id/.well-known/openid-configuration`
+- Client ID: `your-domain-name.xyz`
+
+The callback URL, also known as `redirect_uri`, must either match the domain name provided as client ID or be `localhost`.
+
+Since no client secret is provided, it is recommended to activate PKCE (Proof Key for Code Exchange) in your client library to improve security.
+This adds an extra layer of security when exchanging authorization codes for access tokens.
+It protects against certain types of attacks, such as code interception and replay attacks.
+
+The OpenID / OAuth2 protocol also features multiple "flows".
+However, in order to simplify usage while being as secure as possible, only the "authorization code" flow is supported by Passwordless.ID.
+
+
+Authorization Code flow
+-----------------------
+
+This is the "classic" OAuth2 flow. It works as follows:
+
+1. The webapp redirects the user to Passwordless.ID's endpoint `https:/.../openid/authorize?...`
+2. The user registers or signs in
+3. The user gives consent to share its information with the webapp
+4. The provider redirects the user back to the webapp with an authorization code
+5. The webapp exchanges the authorization code to obtain an access token
+6. The webapp uses the access token to obtain information about the user
+
+PKCE (Proof Key for Code Exchange)
+----------------------------------
+
+PKCE, or Proof Key for Code Exchange, is a protocol extension designed to enhance security for authorization code flows.
+
+PKCE works by generating a random secret (called a code verifier) on the client side and creating a hashed version of it (called a code challenge). When initiating the authorization process, the client sends the code challenge to the authorization server along with the authorization request. Later, when exchanging the authorization code for an access token, the client sends the original code verifier to the authorization server. The server compares the code verifier with the code challenge it received earlier to ensure the authenticity of the request.
