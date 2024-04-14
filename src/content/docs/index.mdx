@@ -11,22 +11,18 @@ hero:
     #image:
     #    file: ../../assets/houston.webp
     #image:
-    #    file: /img/banner-biometric-auth.svg
+    #    file: ../../assets/banner-biometric-auth.svg
     #    alt: "Passwordless.ID Banner"
     actions:
-        - text: Example Guide
-          link: /guides/example/
+        - text: Try it out
+          link: https://ui.passwordless.id
           icon: right-arrow
           variant: primary
-        - text: Read the Starlight docs
-          link: https://starlight.astro.build
+        - text: Documentation
+          link: /getting-started/
           icon: external
 ---
 
-import MyCard from '../../components/MyCard.vue';
-
-How does it work?
------------------
 
 Passwordless.ID is a public identity provider that can be used out-of-the-box, compatible with *OAuth2* and *OpenID*. 
 
@@ -35,11 +31,9 @@ Passwordless.ID is a public identity provider that can be used out-of-the-box, c
 Authentication can be triggered by a simple link, without any app registration nor configuration.
 Try it, the following buttons are just links.
 
-<iframe src="https://ui.passwordless.id"></iframe>
-
 ---
 
-<MyCard icon="/img/features/Safety-Box.svg">
+<img class="big-icon" alt="banner" src="/img/features/Safety-Box.svg" />
 
 Your fingerprint/face never leaves your device
 ----------------------------------------------
@@ -48,12 +42,13 @@ Biometric verification uses the *local authentication* mechamism of your device.
 
 Verification is a safety measure used to prove that you are you, and then to create or access cryptographic keys stored on your device. These keys, also known as passkeys, are in turn used for the authentication mechanism.
 
-</MyCard>
 
-<MyCard icon="/img/features/Protection.svg">
+---
+
+<img class="big-icon" alt="banner" src="/img/features/Protection.svg" />
 
 Safer than passwords
---------------------
+--------------------------
 
 It is basically *two factor authentication* in a *single step*.
 
@@ -64,20 +59,21 @@ It requires biometric verification or the device PIN code.
 
 The combination of both is required in order to authenticate the user.
 
-</MyCard>
 
+---
 
-<MyCard icon="/img/features/Lock-Pattern.svg">
+<img class="big-icon" alt="banner" src="/img/features/Lock-Pattern.svg" />
 
 You can choose <i>not to use</i> fingerprint/face
 -------------------------------------------------
 
 User verification is delegated to your platform. If you are uncomfortable with such a mechanism, you can still use a PIN, a password, a configured swipe pattern, or whatever is configured on your device as a local authentication mechanism.
 
-</MyCard>
+
+---
 
 
-<MyCard icon="/img/features/Phishing-Attack.svg">
+<img class="big-icon" alt="banner" src="/img/features/Phishing-Attack.svg" />
 
 It protects you from phishing
 -----------------------------
@@ -88,10 +84,11 @@ By getting rid of passwords, you get rid of phishing! Great, right?
 
 As long as you don't possess an allowed device, you will not be able to sign in.
 
-</MyCard>
+
+---
 
 
-<MyCard icon="/img/features/icon-device.svg">
+<img class="big-icon" src="/img/features/icon-device.svg" />
 
 Multi-device and platform neutral
 ---------------------------------
@@ -100,10 +97,11 @@ Authentication only works for allowed devices, but of course you can register an
 
 Depending on the platform you use, your passkeys *may* also be automatically synced into the cloud by its built-in password manager, propagating to all devices of the same platform (Windows, Android or iOS).
 
-</MyCard>
+
+---
 
 
-<MyCard icon="/img/features/innovation.svg">
+<img class="big-icon" alt="banner" src="/img/features/innovation.svg" />
 
 How does it work exactly? 
 -------------------------
@@ -115,11 +113,11 @@ The private key is stored on the device, protected by local authentication, whil
 
 When a user wants to authenticate themselves, they must sign a random "challenge" using their private key. This signature is sent to the server, which verifies it against the user's public key. 
 
-</MyCard>
+
+---
 
 
-
-<MyCard icon="/img/features/coder-woman.svg">
+<img class="big-icon" alt="banner" src="/img/features/coder-woman.svg" />
 
 By developers, for developers
 -----------------------------
@@ -150,10 +148,11 @@ else if(res.status === 403)
 
 Check out the [user guide](usage/sign-in-with) for more details.
 
-</MyCard>
+
+---
 
 
-<MyCard icon="/img/features/API-Integration.svg">
+<img class="big-icon" alt="banner" src="/img/features/API-Integration.svg" />
 
 OAuth2 / OpenID compatible
 -------------------------
@@ -164,10 +163,11 @@ If you are familiar with OAuth, you probably know that it is an "authorization" 
 
 If you want to add Passwordless.ID as an additional social login provider using some predefined library, check out our [OAuth2/OpenID guide](/usage/openid)! 
 
-</MyCard>
+
+---
 
 
-<MyCard icon="/img/features/life-buoy.svg">
+<img class="big-icon" src="/img/features/life-buoy.svg" />
 
 What if I lose my (single) device? 
 ----------------------------------
@@ -178,9 +178,9 @@ Nevertheless, the user can also choose which recovery options they accept. From 
 Similarly, if your device is stolen or at risk of being compromised, it can be blocked.
 
 
-</MyCard>
+---
 
-<MyCard icon="/img/features/icon-target.svg">
+<img class="big-icon" src="/img/features/icon-target.svg" />
 
 
 The vision
@@ -194,9 +194,11 @@ The vision
 
 This is achieved by providing tools and services to delegate the authentication to the Passwordless.ID API.
 
-</MyCard>
 
-<MyCard icon="/img/features/customer-experience.svg">
+---
+
+
+<img class="big-icon" src="/img/features/customer-experience.svg" />
 
 If you like it, share it!
 -------------------------
@@ -207,4 +209,3 @@ If you like it, tell others about it! Share it with someone! Every little act he
 
 If you are planning to write a blog article, tutorial, news or something similar, we would love to hear from you. Maybe we can publish it on our blog!
 
-</MyCard>
