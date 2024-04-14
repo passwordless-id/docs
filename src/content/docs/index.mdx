@@ -3,8 +3,8 @@ title: Passwordless.ID
 description: Authentication with TouchID or FaceID for everyone. Ditch passwords, boost security!
 template: splash
 hero:
-    title: Passwordless.ID
-    tagline: The public authentication platform. <br/>Ditch passwords, boost security!
+#    title: Passwordless.ID
+#    tagline: The public authentication platform. <br/>Ditch passwords, boost security!
     image:
         file: ../../assets/logo/logo.svg
         alt: Passwordless.ID Banner
@@ -23,6 +23,7 @@ hero:
           icon: external
 ---
 
+<main class="feature-page">
 
 Passwordless.ID is a public identity provider that can be used out-of-the-box, compatible with *OAuth2* and *OpenID*. 
 
@@ -35,8 +36,7 @@ Try it, the following buttons are just links.
 
 <img class="big-icon" alt="banner" src="/img/features/Safety-Box.svg" />
 
-Your fingerprint/face never leaves your device
-----------------------------------------------
+## Your fingerprint/face never leaves your device
 
 Biometric verification uses the *local authentication* mechamism of your device. On the device, these biometric information is strongly protected and never exposed.
 
@@ -47,8 +47,7 @@ Verification is a safety measure used to prove that you are you, and then to cre
 
 <img class="big-icon" alt="banner" src="/img/features/Protection.svg" />
 
-Safer than passwords
---------------------------
+## Safer than passwords
 
 It is basically *two factor authentication* in a *single step*.
 
@@ -64,8 +63,7 @@ The combination of both is required in order to authenticate the user.
 
 <img class="big-icon" alt="banner" src="/img/features/Lock-Pattern.svg" />
 
-You can choose <i>not to use</i> fingerprint/face
--------------------------------------------------
+## You can choose <i>not to use</i> fingerprint/face
 
 User verification is delegated to your platform. If you are uncomfortable with such a mechanism, you can still use a PIN, a password, a configured swipe pattern, or whatever is configured on your device as a local authentication mechanism.
 
@@ -75,8 +73,7 @@ User verification is delegated to your platform. If you are uncomfortable with s
 
 <img class="big-icon" alt="banner" src="/img/features/Phishing-Attack.svg" />
 
-It protects you from phishing
------------------------------
+## It protects you from phishing
 
 Phishing usually involves tricking a user into entering their password into a fake website, or other approaches such as social engineering. It is the most common way of hacking accounts.
 
@@ -90,8 +87,7 @@ As long as you don't possess an allowed device, you will not be able to sign in.
 
 <img class="big-icon" src="/img/features/icon-device.svg" />
 
-Multi-device and platform neutral
----------------------------------
+## Multi-device and platform neutral
 
 Authentication only works for allowed devices, but of course you can register another device simply by scanning a QR code or clicking on a link. Each device can then be used to authenticate directly using its own local authentication mechanism (for example TouchID on your phone, and PIN on your laptop).
 
@@ -103,8 +99,7 @@ Depending on the platform you use, your passkeys *may* also be automatically syn
 
 <img class="big-icon" alt="banner" src="/img/features/innovation.svg" />
 
-How does it work exactly? 
--------------------------
+## How does it work exactly? 
 
 The authentication relies on a recent browser protocol called [WebAuthn](/protocols/webauthn/1_introduction), which is based on [asymmetric cryptography](https://en.m.wikipedia.org/wiki/Public-key_cryptography). 
 
@@ -119,8 +114,7 @@ When a user wants to authenticate themselves, they must sign a random "challenge
 
 <img class="big-icon" alt="banner" src="/img/features/coder-woman.svg" />
 
-By developers, for developers
------------------------------
+## By developers, for developers
 
 One of the goals of this project is to make it as easy to use as possible.
 You can use this form of authentication for your website right now, with no hassle.
@@ -154,8 +148,7 @@ Check out the [user guide](usage/sign-in-with) for more details.
 
 <img class="big-icon" alt="banner" src="/img/features/API-Integration.svg" />
 
-OAuth2 / OpenID compatible
--------------------------
+## OAuth2 / OpenID compatible
 
 Passwordless.ID is compatible with both *OAuth2* and *OpenID* protocols. That way, you can use it as a generic OpenID provider for a "Sign in with..." button.
 
@@ -169,8 +162,7 @@ If you want to add Passwordless.ID as an additional social login provider using 
 
 <img class="big-icon" src="/img/features/life-buoy.svg" />
 
-What if I lose my (single) device? 
-----------------------------------
+## What if I lose my (single) device? 
 
 If you have only a single device registered, losing it *may* cause locking yourself out of your account. This happens if your platform's built-in password manager has not synced the passwordless credential in the cloud. In this case, the only private key used to sign in would be lost.
 
@@ -182,9 +174,7 @@ Similarly, if your device is stolen or at risk of being compromised, it can be b
 
 <img class="big-icon" src="/img/features/icon-target.svg" />
 
-
-The vision
-----------
+## The vision
 
 "Passwordless.ID" is meant to be a "free public identity provider" with the following philosophy.
 
@@ -200,8 +190,7 @@ This is achieved by providing tools and services to delegate the authentication 
 
 <img class="big-icon" src="/img/features/customer-experience.svg" />
 
-If you like it, share it!
--------------------------
+## If you like it, share it!
 
 This was made with love, sweat, and thoughtfulness. We strive to provide the best authentication experience possible and welcome any feedback.
 
@@ -209,3 +198,4 @@ If you like it, tell others about it! Share it with someone! Every little act he
 
 If you are planning to write a blog article, tutorial, news or something similar, we would love to hear from you. Maybe we can publish it on our blog!
 
+</main>

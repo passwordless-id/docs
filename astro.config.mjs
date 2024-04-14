@@ -16,16 +16,22 @@ export default defineConfig({
     social: {
       github: 'https://github.com/passwordless-id'
     },
-    sidebar: [{
-      label: 'Getting started',
-      autogenerate: {
-        directory: 'getting_started'
-      }
-    }, {
-      label: 'Reference',
-      autogenerate: {
-        directory: 'reference'
-      }
+    sidebar: [
+      {
+        label: 'Basics',
+        autogenerate: {
+          directory: 'basics'
+        }
+      },{
+        label: 'Getting started',
+        autogenerate: {
+          directory: 'getting_started'
+        }
+      }, {
+        label: 'Reference',
+        autogenerate: {
+          directory: 'reference'
+        }
     }]
   }), vue()]
 });

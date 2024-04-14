@@ -29,7 +29,7 @@
 }
 
 .big-icon {
-    height: 8rem !important;
+    height: 7rem !important;
     padding: 1rem;
     margin: -4rem auto -3rem !important;
     background-color: var(--sl-color-black);
@@ -42,7 +42,13 @@ hr {
     border: 0 !important;
 }
 
-h1, h2 {
+.feature-page {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+
+.feature-page h2 {
     text-align: center;
 }
 /*
