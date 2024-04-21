@@ -34,6 +34,7 @@
 
 .big-icon {
     height: 7rem !important;
+	width: 7rem;
     padding: 1rem;
     margin: -4rem auto -3rem !important;
     background-color: var(--sl-color-black);
@@ -65,12 +66,13 @@ hr {
 
 blockquote {
 	font-size: 1.5rem;
-	color: var(--pid-color-primary);
+	color: var(--pid-color-secondary);
 }
 
 blockquote em {
-	color: var(--pid-color-secondary);
+	color: var(--pid-color-primary);
 }
+
 
 /*
 h1, h2 {
@@ -82,3 +84,6 @@ h1, h2 {
 */
 
 
+.feature-page img {
+	width: 100%;
+}
