@@ -16,7 +16,10 @@ export default defineConfig({
     social: {
       github: 'https://github.com/passwordless-id'
     },
-    sidebar: [
+    components: {
+      Hero: './src/components/MyHero.astro'
+    }
+    /*sidebar: [
       {
         label: 'Basics',
         autogenerate: {
@@ -32,6 +35,6 @@ export default defineConfig({
         autogenerate: {
           directory: 'reference'
         }
-    }]
+    }]*/ 
   }), vue()]
 });

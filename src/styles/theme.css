@@ -11,7 +11,11 @@
 	--sl-color-gray-5: #383838;
 	--sl-color-gray-6: #272727;
 	--sl-color-black: #181818;
+
+	--pid-color-primary: #6dc9f7;
+	--pid-color-secondary: #fa759e;
 }
+
 /* Light mode colors. */
 :root[data-theme='light'] {
 	--sl-color-accent-low: #c0d8ff;
@@ -36,7 +40,7 @@
 }
 
 hr {
-    background: linear-gradient(90deg, transparent, #6dc9f7, #fa759e, transparent);
+    background: linear-gradient(90deg, transparent, var(--pid-color-primary), var(--pid-color-secondary), transparent);
     height: 5px;
     margin: 10rem 0 0 !important;
     border: 0 !important;
@@ -48,14 +52,33 @@ hr {
 }
 
 
-.feature-page h2 {
+.feature-page h1,
+.feature-page h2,
+.feature-page blockquote {
     text-align: center;
 }
+
+
+.feature-page blockquote {
+	border: none;
+}
+
+blockquote {
+	font-size: 1.5rem;
+	color: var(--pid-color-primary);
+}
+
+blockquote em {
+	color: var(--pid-color-secondary);
+}
+
 /*
 h1, h2 {
     display: inline-block;
     color: transparent !important;
-    background: linear-gradient(45deg, #0089ef 20%,#fa759e 80%);
+    background: linear-gradient(90deg, #0089ef 30%,#fa759e 70%);
     background-clip: text;
 }
 */
+
+

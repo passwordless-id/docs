@@ -2,57 +2,141 @@
 title: Why Passwordless.ID
 ---
 
+---
+
+<img class="big-icon" alt="banner" src="/img/features/Protection.svg" />
+
 Security
 --------
 
-### No "guessing" your password
+### No brute-forcing your password
+
+Passkeys / WebAuthn is based on public key cryptography instead of passwords.
+As such, "guessing" or brute-forcing the cryptographic key is practically infeasible. 
 
 ### Phishing resistant
 
+No passwords, no phishing. It's as simple as that.
+
+The passkey is kept safe on your device or in your password manager and is never exposed directly.
+Instead, it is used to cryptographically sign an everchanging "challenge".
+As such, there is no risk of theft and even replay attacks become futile.
+
 ### Secure even if hacked
+
+Even in the hypothetical worst case scenario of our service being hacked,
+an attacker could not impersonate you since only the public key is stored there.
+The private key is kept safe on your device or in your password manager and never exposed directly.
 
 ### We have paranoid security
 
+We go to great length to have protection in-depth. For example, even if an attacker manages to access our database, nothing could be read since the content is doubly encrypted.
+Likewise, the decryption key is kept in a secret vault.
+All primary keys are hashed values, and so on.
+
 ### Just inspect our code!
 
-### Passwordless by essence
+You don't have to take our word for it. We are open source. Dive-in, convince yourself.
+
+### Truly passwordless
+
+As hackers know, "an authentication service is as secure as its recovery mechanisms".
+For example, it would be pointless if the recovery mechanism was based on a password or questions/responses.
+We have truly passwordless recovery mechanisms too, relying on having multiple authorized devices if possible.
 
 ### Manage authorized devices
 
+You can have multiple authorized devices and password manager authenticators. 
+Of course, you can also block them if they are stolen or compromised.
+
+
+---
+
+<img class="big-icon" alt="banner" src="/img/features/Incognito-Mode.svg" />
 
 Privacy
 -------
 
 ### No tracking with user IDs
 
+For example, when you use "Sign in with Google", all websites implementing this login will have access to your global user ID.
+This enables them to cross-reference your ID for tracking purposes and a profile activity.
+Such a thing is impossible with Passwordless.ID, since all websites get distinct IDs for the same user.
+
 ### No third-parties involved
+
+The data is safely kept here. It is not shared, sold or otherwise transmitted to any third-parties.
+It goes straight to our database and stays there.
 
 ### Fine-grained profile access
 
+You can clearly define what can be accessed from your profile.
+Whether it is only the nickname, the e-mail, the portrait... on a per website basis.
+It's not a "profile" all-or-nothing unlike some providers.
+
 ### Anonymized E-Mails (TODO)
 
+Don't want spam? Well, you could anonymize your e-mail.
+That way, you do not have to disclose your real e-mail to the third-party website. 
+The e-mails can then be forwarded or straight up blocked, as you wish.
+
+
+---
+
+<img class="big-icon" alt="banner" src="/img/features/customer-experience.svg" />
 
 Comfort
 -------
 
 ### Just use your fingerprint...
 
+No more passwords, yay! No more typing, forgetting, resetting, cursing about complexity rules and so on!
+
 ### Manage profile in one place
+
+Tired of filling your profile information again and again? Well, you don't have to anymore!
+Choose a portrait, fill in your profile and every website can access it (if you permit it to do so).
 
 ### Multi-device / Multi-platform
 
+Don't want to pull out your phone for 2FA each time? Well, simply register all your devices here.
+Then you can use any of your authorized devices, whether it's a PC, a laptop, a tablet or a phone to sign-in directly and as securely.
+
+
+---
+
+<img class="big-icon" alt="banner" src="/img/features/coder-woman.svg" />
 
 Great for devs
 --------------
 
 ### No need to register
 
+Unlike other providers like Apple, Google, Microsoft and others, you don't need to register anything.
+Just use your domain as `client_id` and a `redirect_uri` belonging to your domain. That's it.
+No registration, no limits, no fuss.
+
 ### It's free forever
+
+It's free! Completely free for everyone, forever and without catch.
+
+It is our conviction that making it publicly available is the best way to make the internet a safer place as a whole.
+
+If you like it and use it, you are very welcome to [sponsor us](https://github.com/sponsors/passwordless-id) though.
+
 
 ### OAuth2 / OpenID compliant
 
+Passwordless.ID is compatible with both OAuth2 and OpenID protocols.
+That way, you can use it as a generic OpenID provider for a "Sign in with..." button.
+
 ### Distinguish real from fakes
+
+For websites, it is difficult to distinguish real users from fake ones like bots.
+An anonymous "reputation" associated to users helps to determine their thrustworthiness.
+The reputation for example increases with verified informations (e-mail, phone, multi-devices, identity) and behavior (account age, regular activity)
+while it decreases upon complains. The whole in a privacy-preserving way.
 
 ### No need to look further
 
-
+Give it a go, you won't regret it. 😉
