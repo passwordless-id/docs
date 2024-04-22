@@ -32,9 +32,14 @@
 	--sl-color-black: #ffffff;
 }
 
+@font-face {
+	font-family: 'IndieFlower';
+	src: url('/fonts/IndieFlower-Regular.ttf');
+  }
+
 .big-icon {
     height: 7rem !important;
-	width: 7rem;
+	width: 7rem !important;
     padding: 1rem;
     margin: -4rem auto -3rem !important;
     background-color: var(--sl-color-black);
@@ -62,10 +67,9 @@ hr {
 
 .feature-page blockquote {
 	border: none;
-}
-
-blockquote {
-	font-size: 1.5rem;
+	font-weight: bold;
+	font-size: 1.2rem;
+	font-family: IndieFlower;
 	color: var(--pid-color-secondary);
 }
 
@@ -73,7 +77,14 @@ blockquote em {
 	color: var(--pid-color-primary);
 }
 
+/*
+h1 {
+	color: var(--pid-color-primary);
+}
 
+h2 {
+	color: var(--pid-color-secondary);
+}
 /*
 h1, h2 {
     display: inline-block;

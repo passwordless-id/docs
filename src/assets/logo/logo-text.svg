@@ -217,23 +217,28 @@
    id="path80" />
 		</g>
 	</g>
-</g></g><text
+</g>
+</g>
+<text
    xml:space="preserve"
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.6667px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';fill:#0089ef;fill-opacity:1"
+   style="font-size:50px;"
    x="115.35883"
    y="77.72403"
-   id="text1043"><tspan
+   id="text1043">
+   <tspan
      sodipodi:role="line"
      id="tspan1041"
      x="115.35883"
      y="77.72403"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.6667px;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#0089ef;fill-opacity:1">Passwordless</tspan></text><text
+     style="font-family:Tahoma;fill:#0089ef;">Passwordless</tspan></text><text
    xml:space="preserve"
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:58.6667px;font-family:'MV Boli';-inkscape-font-specification:'MV Boli';fill:#fa759e;fill-opacity:1"
+   style="font-size:60px;font-family:IndieFlower,'MV Boli',Tahoma;fill:#fa759e;"
    x="408.72699"
    y="81.89505"
    id="text1043-4"><tspan
      sodipodi:role="line"
      id="tspan1041-8"
      x="408.72699"
-     y="81.89505">.ID</tspan></text></svg>
+     y="81.89505">.ID</tspan>
+   </text>
+</svg>
