@@ -70,6 +70,9 @@ hr {
 	font-weight: bold;
 	font-size: 1.2rem;
 	font-family: IndieFlower;
+}
+
+blockquote {
 	color: var(--pid-color-secondary);
 }
 
