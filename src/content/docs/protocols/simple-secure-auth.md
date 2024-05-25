@@ -2,27 +2,31 @@
 title: Simple Secure Authentication
 ---
 
-This protocol, abbreviated SSA, is a custom protocol offered as alternative to OpenID and OAuth2.
-It's much simpler and more secure in the sense that you cannot do something wrong.
+Usage
+-----
 
-> If you wonder why OpenID/OAuth2 is so complex and how this protocol can be so simple, I recommend reading this article.
-> It dives into history, which is often the root to the present day situation.
+This custom protocol, abbreviated SSA, is offered as alternative to OpenID and OAuth2.
+It's not only much simpler but also more secure, in the sense that you cannot do something wrong.
 
-The protocol has four endpoints:
+> If you wonder why OpenID/OAuth2 is so complex and how this protocol can be so simple, I recommend reading this article **TODO!**.
+> It dives into the history of the protocols, which explains how the present day situation came to be.
+
+The protocol has three endpoints:
 
 - `{base-url}/sign-in`
 - `{base-url}/profile`
-- `{base-url}/token`
 - `{base-url}/sign-out`
 
-The endpoints and parameters have been especially chosen to differ from OpenID/OAuth2 to avoid confusion.
+> On one hand, some endpoints and parameters have been especially chosen to differ from OpenID/OAuth2 to avoid confusion.
+> On the other hand, some parameters or responses serving the same purpose are identical. 
 
+---
 
-For static websites
--------------------
+### For static websites
+
 
 Just redirect to `{base-url}/sign-in` to let the user sign-in/up.
-Once authenticated, the user will be redirected back to the `Referer`, the website it comes from.
+By default, once authenticated, the user will be redirected back to the `Referer`, the website it comes from.
 
 ```mermaid
 example.com --redirects to--> /sign-in
@@ -68,8 +72,7 @@ Likewise, you may want the user to a land on a specific page after signing in. T
 
 ---
 
-For web servers
----------------
+### For web servers
 
 For this flow, use the `callback` parameter. Once signed in, the `callback` will be invoked to provide a ticket which can be exchanged for a user profile.
 
@@ -91,8 +94,7 @@ The ticket cannot be used anymore afterwards.
 *For security reasons, the `callback` URL must belong to the same domain as the `Referer`.*
 
 
-> Note that unlike OpenID / OAuth2, there is no access token, no id token and no refresh token.
-> After all, there is no API to protect and no reason to have "reusable" tokens.
+> Note that unlike OpenID / OAuth2, you do not to first exchange the "code" for a "token", before accessing the "userinfo" using the "token". Instead, you fetch the "profile" directly using the "ticket".
 >
 > Also, the callback itself is a POST and not a GET.
 > This improves security by avoiding having the ticket being exposed in the URL,
@@ -101,13 +103,13 @@ The ticket cannot be used anymore afterwards.
 
 ---
 
-For terminals / native clients
-------------------------------
+### For terminals / native clients
+
 
 Native apps, "smart devices" and terminals/shells might not be able to receive incoming requests like a server does, and therefore cannot use the back-end flow.
 Sometimes, it might not even be possible to show a browser, yet authentication is possible with this flow.
 
-- POST /code
+- GET /ticket
        `{"name":"something-without-a-dot", "scope":"..."}`
        => `{"code": ..., "ticket": ..., "valid_until": ...}`
 - Device/user opens browser at /sign-in?code=...
@@ -119,8 +121,8 @@ Sometimes, it might not even be possible to show a browser, yet authentication i
 
 ---
 
-Differences to OpenID
----------------------
+### Differences to OpenID
+
 
 Unlike OpenID allowing global user IDs (the `sub`), the SSA protocol imposes the user ID to be "pseudonymous pairwise identifiers".
 In other words, they must differ for each website/client requesting the profile. This is to ensure privacy and it also improves security.
@@ -132,82 +134,28 @@ Also, you cannot request a different scope with the avatar. It's meant to be wha
 
 ---
 
-For APIs
---------
-
-As an API, you don't want to go through hoops to perform authentication or authorization.
-
-You just want to know: "who is it?"
-
-And that's what the /token endpoint is for. It returns two things:
-
-{
-    "id_session": "...",
-    "id_token": "..."
-}
-
-Instead of calling `/profile`, you can fetch `/token` in exactly the same way.
-This will return a Json Web Token containing the profile and signed by Passwordless.ID.
-This token is proof of identity, it does not say anything about the user being signed in or not.
-When your API receives such a token, usually as "Authorization: Bearer", it can be verify the signature 
+Reference
+---------
 
 
+    GET /sign-in
+
+    scope=...
+    goto=...
+    callback=...
+    code=...
+    max_age=...
+    state=...
 
 
-----
+    GET /profile
+    Authorization: Bearer [ticket]
+    
+    GET /sign-out
 
-Sometimes, users using a service want to share their data with another service.
+    goto=...
+    callback=...
 
+Additional scopes:
 
-
-Let's assume a user is authenticated with example.org and the webapp wants to use service.xyz.
-How shall it proceed?
-
-It's like:
-
-- example.org: hey service.xyz, I'd like to do some *fancy action* in the current user's context.
-
-Currently:
-
-- example.org: go to service.xyz to ask for permission
-- service.xyz: asks user if "example.org" is allowed to perform *fancy action*
-- go back to example.org and do it
-
-Easier flow:
-
-- example.org: asks user if allowed to perform *fancy action* at service.xyz
-
-/authorize?source=...&target=...&scope=...&callback=...
-
-POST /callback
-    application/x-www-form-urlencoded
-    token=...
-
-Decoded JWT token:
-
-```json
-{
-    "iss": "https://passwordless.id",
-    "kid": "...",
-    "iat": 12345678,
-
-    "type": "authorization",
-    "source": "example.org",
-    "target": "service.xyz",
-    "scope": "...",
-    "sub": "the target user's ID"
-}
-```
-
-
-example.org --> service.xyz
-Authorization: Bearer [jwt]
-
-service.xyz:
-
-- verify JWT
-- it's for user `sub` and consumer "example.org"
-- the user granted access
-- grant operation if scope match
-import type { watchSyncEffect } from "vue"
-
+    `avatar`: the default scope, containing the claims `sub`, `nickname` and `picture`
